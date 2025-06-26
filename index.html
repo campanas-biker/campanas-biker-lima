@@ -14,17 +14,49 @@
         /* Estilo para el botón flotante de WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 80px; /* Se ha subido el botón 60px más arriba */
+            bottom: 80px;
             right: 20px;
             z-index: 1000;
         }
         .whatsapp-float img {
-            width: 24px; /* Ajusta el tamaño del icono si es necesario */
+            width: 24px;
             height: 24px;
+        }
+        /* Estilos para la sección de historia con imagen de fondo */
+        .story-section {
+            background-image: url('https://i.imgur.com/iYPmMsl.jpeg'); /* [Image of Motocicleta en la carretera] */
+            background-size: cover; /* La imagen cubre todo el espacio */
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+            width: 100%; /* Asegura que ocupe todo el ancho disponible */
+            min-height: 300px; /* Altura mínima para que la imagen sea visible */
+            display: flex; /* Para centrar el overlay si es necesario */
+            align-items: center; /* Centra verticalmente el overlay */
+            justify-content: center; /* Centra horizontalmente el overlay */
+        }
+        .story-overlay {
+            background-color: rgba(0, 0, 0, 0.4); /* Capa oscura más transparente (0.4) */
+            height: 100%; /* Cubre toda la altura del padre (story-section) */
+            width: 100%; /* Cubre todo el ancho del padre (story-section) */
+            display: flex; /* Para centrar el contenido del texto */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .story-content {
+            /* Contenedor para el texto dentro del overlay, mantiene el ancho y padding */
+            max-width: 960px; /* Ancho máximo para el texto, similar al "container mx-auto" de Tailwind */
+            width: 100%;
+            padding: 2rem 1rem; /* Padding para el texto: arriba/abajo 2rem, izquierda/derecha 1rem */
+            margin: auto; /* Centra el contenido */
+            box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-neutral-100 text-gray-800">
 
     <!-- Encabezado de la página -->
     <header class="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-6 shadow-lg rounded-b-lg">
@@ -35,11 +67,15 @@
     </header>
 
     <!-- Sección de Introducción sobre las Guardian Bells -->
-    <section class="container mx-auto px-4 py-8 bg-white rounded-xl shadow-lg mt-8">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-gray-800">La Leyenda de las Guardian Bells</h2>
-        <p class="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
-            Las Guardian Bells son un amuleto esencial para todo motociclista. La leyenda cuenta que estas pequeñas campanas ahuyentan a los "Gremlins del Camino", espíritus malignos que causan averías y mala suerte. Su sonido los atrapa, haciendo que caigan al asfalto y manteniendo tu ruta segura. La tradición dice que su magia es más fuerte cuando es un regalo, simbolizando protección y la hermandad biker en cada viaje. ¡Lleva contigo esta leyenda y viaja con la seguridad que te mereces!
-        </p>
+    <section class="story-section">
+        <div class="story-overlay">
+            <div class="story-content">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-white">La Leyenda de las Guardian Bells</h2>
+                <p class="text-white text-base md:text-lg leading-relaxed text-justify">
+                    Las Guardian Bells son un amuleto esencial para todo motociclista. La leyenda cuenta que estas pequeñas campanas ahuyentan a los "Gremlins del Camino", espíritus malignos que causan averías y mala suerte. Su sonido los atrapa, haciendo que caigan al asfalto y manteniendo tu ruta segura. La tradición dice que su magia es más fuerte cuando es un regalo, simbolizando protección y la hermandad biker en cada viaje. ¡Lleva contigo esta leyenda y viaja con la seguridad que te mereces!
+                </p>
+            </div>
+        </div>
     </section>
 
     <!-- Sección principal de productos -->
